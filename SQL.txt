@@ -1,0 +1,32 @@
+Task 1
+
+Необходимо проверить, отображается ли созданный заказ в базе данных.
+Для этого: распечатаем список логинов курьеров с количеством их заказов
+в статусе «В доставке» (поле inDelivery = true).
+
+
+SELECT C.login AS "Courier", COUNT(O."inDelivery") AS "All active orders"
+FROM "Couriers" AS C
+INNER JOIN "Orders" AS O ON C.id=O."courierId"
+WHERE O."inDelivery"=true
+GROUP by C.login;
+
+Task 2
+
+Необходимо убедиться, что база данных статусов заказов верна.
+Для этого: выведем все трекеры заказов и их статус.
+Статусы определяются по следующему правилу:
+
+if the field is finished == true, the output is 2,
+if the field canselled == true, the output is -1,
+if the inDelivery field is == true, the output is 1,
+for other cases, print 0.
+
+SELECT track,
+    CASE
+        WHEN "finished" = TRUE THEN 2
+        WHEN "cancelled" = TRUE THEN -1
+        WHEN "inDelivery" = TRUE THEN 1
+        ELSE 0
+    END AS "Status"
+FROM "Orders";
