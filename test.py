@@ -1,9 +1,6 @@
-import configuration
-import data
+#Степан Яковле, 8-я когорта "Дипломный проект, инженер по тестированию плюс"
 import request
 
-
-#Степан Яковле, 8-я когорта "Дипломный проект, инженер по тестированию плюс"
 # Проверяем создание заказа
 def test_order_creation():
     creation_response = request.post_new_order()
