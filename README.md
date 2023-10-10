@@ -12,4 +12,5 @@
 
 ## Конфигурация.
 URL-адрес сервера: https://52a2b89f-8ff0-4f4d-82cf-352ee99d5474.serverhub.praktikum-services.ru.
+
 Стек: PyCharm, пакеты `pytest`, `request`.
